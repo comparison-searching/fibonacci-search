@@ -1139,7 +1139,7 @@
   dependencies:
     chalk "^4.0.0"
 
-"@comparison-searching/specification@^1.0.1":
+"@comparison-searching/specification@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@comparison-searching/specification/-/specification-1.0.1.tgz#730d5bcaa65d041a96656d84f446a63df932c8a4"
   integrity sha512-VsFFG/us30/Ib9ge0i6FgMCcPuYtjzzQ/AVVea2RnSFBR89urv7FeHDeMSMB55OiiGlt/fliuOihUE4FJYBMow==
