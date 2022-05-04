@@ -24,7 +24,11 @@ const largeArray = {
 
 const seed = [123, 456];
 
-for (const args of [{}, {length: [333, 1000, 10_000]}, largeArray]) {
+for (const args of [
+	{},
+	{length: [54, 55, 56, 333, 377, 1000, 6765, 10_000]},
+	largeArray,
+]) {
 	for (const unit of units(args)) {
 		test(macro, {...unit, seed, search});
 	}
