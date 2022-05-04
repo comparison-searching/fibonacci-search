@@ -21,9 +21,7 @@ import assert from 'assert';
  *  for further comparison.
  */
 const search = (delta, a, i, j, v) => {
-	// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 	const n = (j - i) | 0;
-	// eslint-disable-next-line no-bitwise
 	if (n <= 0) return ~j;
 
 	// INIT F(k-1) and F(k-2)
@@ -31,18 +29,15 @@ const search = (delta, a, i, j, v) => {
 	let p = 1;
 	let temporary = 0;
 	do {
-		// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 		temporary = (q + p) | 0;
 		q = p;
 		p = temporary;
 	} while (p > 0 && p <= n);
 
 	p = q;
-	// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 	q = (temporary - q) | 0;
 
 	// MAIN LOOP
-	// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 	let m = (((i + q) | 0) - 1) | 0; // I + F(k-2) - 1
 	while (i < j) {
 		// We have
@@ -60,34 +55,22 @@ const search = (delta, a, i, j, v) => {
 		const d = delta(v, a[m]);
 		if (d < 0) {
 			j = m;
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			p = (p - q) | 0; // F(k-3)
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			q = (q - p) | 0; // F(k-4)
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			m = (((i + q) | 0) - 1) | 0;
 		} else if (d > 0) {
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			q = (p - q) | 0; // F(k-3)
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			p = (((m - i) | 0) + 1) | 0; // F(k-2)
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			i = (m + 1) | 0;
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			m = (((i + q) | 0) - 1) | 0; // I + F(k-2) - 1
-			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			while (((p - 1) | 0) > ((j - i) | 0)) {
-				// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 				q = (p - q) | 0; // F(k-3)
-				// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 				p = (((m - i) | 0) + 1) | 0; // F(k-2)
-				// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 				m = (((i + q) | 0) - 1) | 0; // I + F(k-2) - 1
 			}
 		} else return m;
 	}
 
-	// eslint-disable-next-line no-bitwise
 	return ~j;
 };
 

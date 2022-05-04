@@ -204,6 +204,8 @@
       "unicorn"
     ],
     "rules": {
+      "no-bitwise": "off",
+      "unicorn/prefer-math-trunc": "off",
       "unicorn/prefer-node-protocol": "off",
       "unicorn/filename-case": [
         "error",

@@ -11,11 +11,8 @@ const search = {
 
 const largeArray = {
 	array: [Int32Array],
-	// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 	length: [(10 ** 5) | 0],
-	// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 	min: [-(2 ** 31) | 0],
-	// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 	max: [(2 ** 31 - 1) | 0],
 	delta: [
 		{
