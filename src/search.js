@@ -53,8 +53,8 @@ const search = (delta, a, i, j, v) => {
 		//
 		// F(k-2) <= F(k-1)
 		assert(q <= p);
-		// F(k-2) <= N
-		assert(q <= j - i);
+		// F(k-1) - 1 <= N
+		assert(p - 1 <= j - i);
 		// N <= F(k) - 1 = F(k-1) + F(k-2) - 1
 		assert(q + p - 1 >= j - i);
 		const d = delta(v, a[m]);
@@ -75,13 +75,14 @@ const search = (delta, a, i, j, v) => {
 			i = (m + 1) | 0;
 			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
 			m = (((i + q) | 0) - 1) | 0; // I + F(k-2) - 1
-			while (m >= j) {
+			// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
+			while (((p - 1) | 0) > ((j - i) | 0)) {
 				// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
-				p = (p - q) | 0; // F(k-3)
+				q = (p - q) | 0; // F(k-3)
 				// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
-				q = (q - p) | 0; // F(k-4)
+				p = (((m - i) | 0) + 1) | 0; // F(k-2)
 				// eslint-disable-next-line no-bitwise,unicorn/prefer-math-trunc
-				m = (((i + q) | 0) - 1) | 0;
+				m = (((i + q) | 0) - 1) | 0; // I + F(k-2) - 1
 			}
 		} else return m;
 	}
