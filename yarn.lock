@@ -1139,10 +1139,10 @@
   dependencies:
     chalk "^4.0.0"
 
-"@comparison-searching/specification@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@comparison-searching/specification/-/specification-1.0.1.tgz#730d5bcaa65d041a96656d84f446a63df932c8a4"
-  integrity sha512-VsFFG/us30/Ib9ge0i6FgMCcPuYtjzzQ/AVVea2RnSFBR89urv7FeHDeMSMB55OiiGlt/fliuOihUE4FJYBMow==
+"@comparison-searching/specification@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@comparison-searching/specification/-/specification-1.1.0.tgz#4f0d766ce529e5aa7cdc6709d1f94f27255e14ab"
+  integrity sha512-0mStPzx72/ilHQ6H4aVALaZcu8CLNB9YAO4nxz5VBZ9xPael2FORpG88BlDQixsSnKXkjvyBdgpRKCKY9xIUfA==
   dependencies:
     "@array-like/copy" "^0.0.1"
     "@entropy-source/pseudo-random" "^4.0.0"
