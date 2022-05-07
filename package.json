@@ -107,7 +107,7 @@
     "nodeArguments": [
       "--experimental-loader=@node-loader/core"
     ],
-    "timeout": "1m"
+    "timeout": "5m"
   },
   "babel": {
     "sourceMaps": true,
